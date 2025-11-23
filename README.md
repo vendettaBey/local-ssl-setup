@@ -1,70 +1,70 @@
 # LocalSSL 🔒
 
-LocalSSL, yerel geliştirme ortamınızda (localhost) HTTPS kullanmanızı sağlayan, kurulum gerektirmeyen (native Node.js) bir komut satırı aracıdır.
+LocalSSL is a zero-config, native Node.js command-line tool that enables you to use HTTPS in your local development environment (localhost) without any installation.
 
-## Özellikler
+## Features
 
-- 🚀 **Hızlı:** Tek komutla sertifika oluşturur.
-- 📦 **Kurulumsuz:** Harici bir binary (mkcert vb.) indirmenize gerek yoktur.
-- 🛡️ **Güvenli:** Kendi Sertifika Yetkilinizi (CA) oluşturur ve sisteminize tanıtır.
-- ⚙️ **Esnek:** İster komut satırı argümanlarıyla, ister interaktif modda kullanın.
-- 🌐 **IPv6 Desteği:** IPv6 adresleri (örn: `::1`) için tam destek.
-- 🧹 **Temizlenebilir:** İstediğiniz zaman CA sertifikasını sistemden tek komutla kaldırabilirsiniz.
+- 🚀 **Fast:** Generates certificates with a single command.
+- 📦 **No Installation:** No need to download external binaries (like mkcert).
+- 🛡️ **Secure:** Creates your own Certificate Authority (CA) and trusts it on your system.
+- ⚙️ **Flexible:** Use it via command-line arguments or interactive mode.
+- 🌐 **IPv6 Support:** Full support for IPv6 addresses (e.g., `::1`).
+- 🧹 **Cleanable:** You can remove the CA certificate from the system with a single command.
 
-## Kurulum
+## Installation
 
-Aracı global olarak kurarak her yerden erişebilirsiniz:
+Install globally to access it from anywhere:
 
 ```bash
 npm install -g local-ssl-setup
 ```
 
-Veya kurmadan `npx` ile anlık çalıştırabilirsiniz:
+Or run it instantly with `npx` without installing:
 
 ```bash
 npx local-ssl-setup
 ```
 
-## Kullanım
+## Usage
 
-### 1. İnteraktif Mod (Önerilen)
+### 1. Interactive Mode (Recommended)
 
-Hiçbir parametre vermeden çalıştırırsanız, size adım adım sorular sorar:
+If you run it without parameters, it will ask you step-by-step questions:
 
 ```bash
 local-ssl-setup
 ```
 
-### 2. Hızlı Mod
+### 2. Quick Mode
 
-Domainleri ve çıktı klasörünü doğrudan belirtebilirsiniz:
+You can specify domains and output directory directly:
 
 ```bash
 local-ssl-setup -d localhost,test.local --output ./certs
 ```
 
-### 3. Kaldırma (Uninstall)
+### 3. Uninstall
 
-CA sertifikasını sistem güvenilir köklerinden kaldırmak için:
+To remove the CA certificate from system trusted roots:
 
 ```bash
 local-ssl-setup --uninstall
 ```
 
-### Seçenekler
+### Options
 
-| Seçenek        | Kısayol | Açıklama                                                      |
-| -------------- | ------- | ------------------------------------------------------------- |
-| `--domains`    | `-d`    | Virgülle ayrılmış domain listesi (örn: `localhost,api.local`) |
-| `--output`     | `-o`    | Sertifikaların kaydedileceği klasör                           |
-| `--validity`   |         | Sertifika geçerlilik süresi (gün). Varsayılan: 365            |
-| `--install-ca` |         | CA sertifikasını sistem güvenilir köklerine eklemeyi dener    |
-| `--uninstall`  |         | CA sertifikasını sistemden kaldırır                           |
-| `--help`       | `-h`    | Yardım mesajını gösterir                                      |
+| Option         | Alias | Description                                                   |
+| -------------- | ----- | ------------------------------------------------------------- |
+| `--domains`    | `-d`  | Comma separated list of domains (e.g., `localhost,api.local`) |
+| `--output`     | `-o`  | Directory to save certificates                                |
+| `--validity`   |       | Certificate validity in days. Default: 365                    |
+| `--install-ca` |       | Attempts to add the CA certificate to system trusted roots    |
+| `--uninstall`  |       | Removes the CA certificate from the system                    |
+| `--help`       | `-h`  | Shows help message                                            |
 
-## Yapılandırma Dosyası (Opsiyonel)
+## Configuration File (Optional)
 
-Projenizin kök dizininde `localssl.config.js` dosyası oluşturarak ayarlarınızı sabitleyebilirsiniz:
+You can persist your settings by creating a `localssl.config.js` file in your project root:
 
 ```javascript
 // localssl.config.js
@@ -74,8 +74,10 @@ module.exports = {
 };
 ```
 
-## Destek
+## Support
 
-Bu araç işinize yaradıysa, bir kahve ısmarlayabilirsiniz ☕
+If you enjoy this theme and want to support its development, you can buy me a coffee! ☕
 
-[Buy Me a Coffee](https://www.buymeacoffee.com/vendettaBey)
+<a href="https://buymeacoffee.com/vendettabey" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+Your support helps me create more awesome themes and tools! 🙏
