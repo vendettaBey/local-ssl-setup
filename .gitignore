@@ -1,0 +1,7 @@
+node_modules
+*.log
+.DS_Store
+certificates/
+.env
+LocalSSL - Teknik Implementasyon Dokümanı.md
+Yazılım Gereksinimleri Spesifikasyonu (SRS).md
