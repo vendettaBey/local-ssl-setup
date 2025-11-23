@@ -78,4 +78,4 @@ module.exports = {
 
 Bu araç işinize yaradıysa, bir kahve ısmarlayabilirsiniz ☕
 
-[Buy Me a Coffee](https://www.buymeacoffee.com/omerkargin)
+[Buy Me a Coffee](https://www.buymeacoffee.com/vendettaBey)

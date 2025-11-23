@@ -1,7 +1,7 @@
 {
-  "name": "localssl",
-  "version": "1.0.0",
-  "description": "",
+  "name": "local-ssl-setup",
+  "version": "1.0.1",
+  "description": "Zero-config, native Node.js tool to generate trusted SSL certificates for local development (localhost HTTPS).",
   "main": "bin/localssl.js",
   "bin": {
     "local-ssl-setup": "./bin/localssl.js"
@@ -9,9 +9,21 @@
   "scripts": {
     "test": "node test/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vendettaBey/local-ssl-setup.git"
+  },
+  "keywords": [
+    "ssl",
+    "https",
+    "localhost",
+    "certificate",
+    "development",
+    "zero-config",
+    "ipv6"
+  ],
+  "author": "vendettaBey",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "chalk": "^4.1.2",

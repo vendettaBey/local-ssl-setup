@@ -142,7 +142,9 @@ async function main() {
             "If this tool helped you, consider supporting the development:"
           )
         );
-        console.log(chalk.underline("https://www.buymeacoffee.com/omerkargin"));
+        console.log(
+          chalk.underline("https://www.buymeacoffee.com/vendettaBey")
+        );
       } catch (error) {
         spinner.fail(chalk.red("Operation failed"));
         console.error(error);
