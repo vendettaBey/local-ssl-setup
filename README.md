@@ -1,5 +1,10 @@
 # LocalSSL 🔒
 
+[![npm version](https://img.shields.io/npm/v/local-ssl-setup.svg)](https://www.npmjs.com/package/local-ssl-setup)
+[![npm downloads](https://img.shields.io/npm/dm/local-ssl-setup.svg)](https://www.npmjs.com/package/local-ssl-setup)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
+
 LocalSSL is a zero-config, native Node.js command-line tool that enables you to use HTTPS in your local development environment (localhost) without any installation.
 
 ## Features
@@ -10,6 +15,22 @@ LocalSSL is a zero-config, native Node.js command-line tool that enables you to 
 - ⚙️ **Flexible:** Use it via command-line arguments or interactive mode.
 - 🌐 **IPv6 Support:** Full support for IPv6 addresses (e.g., `::1`).
 - 🧹 **Cleanable:** You can remove the CA certificate from the system with a single command.
+
+## ⚡ Quick Start
+
+```bash
+# One-time setup (creates and trusts CA)
+npx local-ssl-setup
+
+# Generate certificates for your project
+npx local-ssl-setup -d localhost,app.test -o ./certs
+```
+
+## 🖥️ Platform Support
+
+- ✅ **Windows** 10/11
+- ✅ **macOS** 10.15+
+- ✅ **Linux** (Ubuntu, CentOS, etc.)
 
 ## Installation
 
@@ -51,6 +72,44 @@ To remove the CA certificate from system trusted roots:
 local-ssl-setup --uninstall
 ```
 
+## 🛠️ Integration Examples
+
+### Vite
+
+```bash
+vite --https --key ./certs/localhost.key --cert ./certs/localhost.crt
+```
+
+### Webpack Dev Server
+
+```javascript
+// webpack.config.js
+const fs = require("fs");
+
+module.exports = {
+  devServer: {
+    https: {
+      key: fs.readFileSync("./certs/localhost.key"),
+      cert: fs.readFileSync("./certs/localhost.crt"),
+    },
+  },
+};
+```
+
+### Express.js
+
+```javascript
+const https = require("https");
+const fs = require("fs");
+
+const options = {
+  key: fs.readFileSync("./certs/localhost.key"),
+  cert: fs.readFileSync("./certs/localhost.crt"),
+};
+
+https.createServer(options, app).listen(443);
+```
+
 ### Options
 
 | Option         | Alias | Description                                                   |
@@ -73,6 +132,18 @@ module.exports = {
   output: "./ssl",
 };
 ```
+
+## ❓ Troubleshooting
+
+### Certificate not trusted?
+
+- Run with admin/sudo privileges: `sudo local-ssl-setup`
+- Restart your browser after installation
+
+### Command not found?
+
+- Use npx: `npx local-ssl-setup`
+- Or install globally: `npm install -g local-ssl-setup`
 
 ## Support
 
