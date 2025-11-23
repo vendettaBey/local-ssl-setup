@@ -1,6 +1,6 @@
 {
   "name": "local-ssl-setup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Zero-config, native Node.js tool to generate trusted SSL certificates for local development (localhost HTTPS).",
   "main": "bin/localssl.js",
   "bin": {
